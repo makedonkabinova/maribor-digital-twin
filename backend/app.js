@@ -6,7 +6,6 @@ const logger = require('morgan');
 const dotenv = require('dotenv');
 dotenv.config();
 
-
 //MONGOOSE
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DB_CONNECT, () => console.log('Connected to database!'));
@@ -26,6 +25,20 @@ const userRouter = require('./routes/userRoutes')
 
 
 const app = express();
+//CORS
+var cors = require('cors'); //API bo na port 5000, react bo na 3001, rabimo cors za komunikacijo
+var allowedOrigins = ['http://localhost:5000', 'http://localhost:3000'];
+app.use(cors({
+  credentials: true,
+  origin: function(origin, callback){
+    if(!origin) return callback(null, true);
+    if(allowedOrigins.indexOf(origin) === -1){
+      var msg = "The CORS policy for this site does not allow access from the specified Origin.";
+      return callback(new Error(msg), false);
+    } return callback(null, true);
+  }
+}));
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

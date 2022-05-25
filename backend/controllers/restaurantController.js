@@ -177,7 +177,7 @@ module.exports = {
         }, function(err, restaurants){
             if (err) {
                 return res.status(500).json({
-                    message: 'Error when getting restaurants.',
+                    message: 'Error when getting restaurant.',
                     error: err
                 });
             }
