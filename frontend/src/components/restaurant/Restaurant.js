@@ -115,7 +115,6 @@ function Restaurant(props){
             );
     }
     const [aStyle, setAStyle] = useState({color: "black"});
-    //const [viewRestaurant, setViewRestaurant] = useState(false);
 
     return (
         <div key={props.key}>

@@ -8,8 +8,8 @@ class Restaurants extends Component {
 
         this.state = {
             restaurants: [],
-            centerLat: 46.557294,
-            centerLng: 15.646074,
+            centerLat: 46.557294, //latitude of the center of Maribor
+            centerLng: 15.646074, //latitude of the center of Maribor
             zoom: 15,
             showAll: true,
             showNearby: false,
@@ -61,7 +61,7 @@ class Restaurants extends Component {
         return (
             <div className="container" style={{width: "80%", position: "fixed"}}>
                 <div className="row">
-                    <div className="col-3 d-flex flex-column flex-shrink-0 p-3 bg-light" style={{border: "1px solid black", width: "280px", height: "730px"}}>
+                    <div className="col-3 d-flex flex-column flex-shrink-0 p-3 bg-light" style={{border: "1px solid black", maxWidth: "30%", maxHeight: "730px"}}>
                     <div className="sidebar-heading"><h3>Restaurants</h3></div>
                         <span>
                             {
@@ -109,7 +109,7 @@ class Restaurants extends Component {
                                 this.state.restaurants.map(restaurant => (
                                 <Marker title={restaurant.name} name={restaurant.name} key={restaurant._id}
                                     position={{lat: restaurant.location.coordinates[0], lng: restaurant.location.coordinates[1]}}
-                                    label={restaurant.meals.length.toString()}
+                                    label={restaurant.orders.length.toString()}
                                 />
                             ))}
                         </Map>
@@ -120,5 +120,5 @@ class Restaurants extends Component {
     }
 }
 export default GoogleApiWrapper({
-    apiKey: (process.env.GOOGLE_MAPS_API_KEY)
+    apiKey: (process.env.GOOGLE_MAPS_BILLING_API_KEY)
 })(Restaurants);
