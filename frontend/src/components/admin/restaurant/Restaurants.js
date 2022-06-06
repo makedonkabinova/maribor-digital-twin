@@ -8,6 +8,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
 import TableBody from "@mui/material/TableBody";
+import './../../styles/formStyle.css'
 
 function AdminRestaurants() {
 
@@ -27,9 +28,16 @@ function AdminRestaurants() {
         getRestaurants();
     }, []);
 
+    const update = async function () {
+        await fetch('http://localhost:5000/trstaurant/api', {
+            method: 'POST'
+        });
+    }
+
     return (
     <div className={"m-3"}>
         <h2>Restaurants</h2>
+        <button className={"btn yellow mb-2"} onClick={update}>Update database</button>
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
