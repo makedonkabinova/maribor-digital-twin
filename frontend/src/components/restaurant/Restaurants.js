@@ -2,7 +2,6 @@ import {Component} from "react";
 import Restaurant from './Restaurant';
 import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
 import './../styles/formStyle.css'
-import restaurant from "../admin/restaurant/Restaurant";
 import {Button} from "@mui/material";
 import HomeIcon from '@mui/icons-material/HomeOutlined';
 import MarkEmailReadIcon from '@mui/icons-material/MarkEmailRead';
@@ -11,7 +10,7 @@ import LanguageIcon from '@mui/icons-material/Language';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
 import {Link} from "react-router-dom";
-
+const GOOGLE_API = process.env.REACT_APP_GOOGLE_MAPS_BILLING_API_KEY;
 class Restaurants extends Component {
     constructor(props) {
         super(props);
@@ -254,5 +253,5 @@ class Restaurants extends Component {
 }
 
 export default GoogleApiWrapper({
-    apiKey: (process.env.GOOGLE_MAPS_BILLING_API_KEY)
+    apiKey: (process.env.REACT_APP_GOOGLE_MAPS_BILLING_API_KEY)
 })(Restaurants);

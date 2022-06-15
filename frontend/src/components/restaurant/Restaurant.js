@@ -1,5 +1,4 @@
 import {useState} from "react";
-import restaurant from "../admin/restaurant/Restaurant";
 
 function Restaurant(props) {
 
@@ -124,8 +123,8 @@ function Restaurant(props) {
                 <div className="col-8" style={{textAlign: "left"}}>
                     <span
                         style={aStyle}
-                        onMouseOver={() => setAStyle({color: "red", cursor: "pointer"})}
-                        onMouseLeave={() => setAStyle({color: "black"})}
+                        onMouseOver={() => setAStyle({color: "#63458A", cursor: "pointer"})}
+                        onMouseLeave={() => setAStyle({color: "#04030F"})}
                         onClick={props.closer()}
                     >
                         {props.restaurant.name}
