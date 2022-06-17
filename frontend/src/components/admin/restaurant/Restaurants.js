@@ -29,7 +29,7 @@ function AdminRestaurants() {
     }, []);
 
     const update = async function () {
-        await fetch('http://localhost:5000/trstaurant/api', {
+        await fetch('http://localhost:5000/restaurant/api', {
             method: 'POST'
         });
     }
