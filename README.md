@@ -3,6 +3,12 @@
 
 This project was created as a part of a subject at [R-IT-FERI](https://feri.um.si/en/study/programmes/first-cycle/un/rit/). Check Wiki pages for more info.
 
+Links to other repositories:
+- [Mobile App](https://github.com/makedonkabinova/eatical-mobile-app)
+- [MQTT Server](https://github.com/StefanSrnjakov/eatical-mqtt-server)
+- [Map of Restaurants](https://github.com/makedonkabinova/eatical-map/tree/main)
+- [Desktop App](https://github.com/makedonkabinova/eatical-desktop)
+
 ## Idea
 
 The idea for our project is for restaurants to publish meals on our app that otherwise would be of a bigger price (the original price), but since the meal is something that they've prepared before and they are unable to sell it, they are selling it via our app for a cheaper price. The restaurants can register via our [Desktop App](https://github.com/makedonkabinova/eatical-desktop), while users (customers) can register via our web app. Lets look from both sides:
